@@ -1,0 +1,23 @@
+    /*function insertar($conexion){
+        // Verificar si las variables del formulario están definidas
+        $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
+        $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
+        $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
+        $mensaje = isset($_POST['mensaje']) ? $_POST['mensaje'] : '';
+    
+        $datos = array();
+        echo json_encode($datos);
+    
+        // Usar consultas preparadas para evitar la inyección de SQL
+        $consulta = $conexion->prepare("INSERT INTO contactos (nombre, telefono, correo, mensaje) VALUES (?, ?, ?, ?)");
+        $consulta->bind_param("ssss", $nombre, $telefono, $correo, $mensaje);
+        
+        // Ejecutar la consulta
+        $consulta->execute();
+    
+        // Cerrar la consulta y la conexión
+        $consulta->close();
+        $conexion->close();
+    }*/
+
+    

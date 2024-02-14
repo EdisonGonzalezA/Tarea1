@@ -1,0 +1,280 @@
+:root{/*un custom properties, para agregar una paleta de colores*/
+    /*variables de CSS*/
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+
+    --fuente-principal: 3.8rem;
+}
+/**Globales**/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;/*hack para Box Model*/
+    scroll-snap-type: y mandatory;
+}
+/**Scroll Snap**/
+.servicios, 
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px; /*1rem = 10px */
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Krub', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+.contenedor{
+    max-width: 120rem;
+    /*margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;*/
+    /*margin: 0 auto 0 auto;*/
+/*escribiendo margin y los valores de los margenes en el sentido del reloj
+se puede escribir el codigo en una sola linea, ademas cuando los valores 
+se repiten se puede dejar solamente los dos primeros y CSS entiende de que se trata*/
+    margin: 0 auto;
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+.boton:hover{
+    cursor: pointer;
+}
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+}
+
+/**Tipografia**/
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+/**Titulos**/
+.titulo  span{/*especificidad*/
+    font-size: 2rem;
+}
+
+/**Utilidades**/
+.w-sm-100 {
+    width: 100%;
+}
+@media (min-width: 758px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+.flex {
+    display: flex;
+}
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+/**Navegacion Principal**/
+.nav-bg {
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+}
+/*los MEDIA QUERIE para telefono son 480px, para tablet 768px, 
+para una computadora de escritorio o laptop 1140px o 1400px*/
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro)
+}
+
+/**Hero**/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;/*el padre tiene que estan en posicion relativa para que el hijo se posicione en posicion absoluta*/
+    margin-bottom: 2rem;
+}
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7 );/*Anterior*/
+    background-color: rgb(0 0 0 / 70% );
+    width: 100%;
+    height: 100%;
+    /*Este codigo me permite alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+/**Servicios**/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;/*separacion entre columnas*/
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/**Contacto**/
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem 100%);
+    /*utilizarelvalormaspequeño*/margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.formulario fieldset {
+    border: none;
+}
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+}
+.campo {
+    margin-bottom: 1rem;
+}
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+.campo textarea {
+    height: 20rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+
+/**Footer**/
+.footer {
+    text-align: center;
+}
